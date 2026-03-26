@@ -1,0 +1,48 @@
+<?php
+/**
+ * Copy this file to config.php and fill in your local secrets/settings.
+ */
+
+# -------------------------
+# Database settings
+# -------------------------
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'ipam');
+define('DB_USER', 'ipam');
+define('DB_PASS', 'change_me');
+
+# -------------------------
+# LDAP settings
+# -------------------------
+define('LDAP_HOST', 'ldap.example.com');
+define('LDAP_BASE_DN', 'DC=example,DC=com');
+define('LDAP_BIND_USER', 'CN=Service Account,OU=Service Accounts,DC=example,DC=com');
+define('LDAP_BIND_PASS', 'change_me');
+define('LDAP_USE_TLS', false);
+define('LDAP_USERNAME_ATTRIBUTE', 'sAMAccountName');
+define('LDAP_ALLOWED_LOGIN_GROUPS', [
+	'CN=IT Support,OU=Groups,DC=example,DC=com',
+]);
+
+# -------------------------
+# SMTP settings
+# -------------------------
+define('SMTP_SERVER', 'smtp.example.com');
+define('SMTP_AUTH', false);
+define('SMTP_USERNAME', false);
+define('SMTP_PASSWORD', false);
+define('SMTP_PORT', '587');
+define('SMTP_SENDER_ADDRESS', 'noreply@example.com');
+define('SMTP_SENDER_NAME', 'IPAM');
+
+# -------------------------
+# Application settings
+# -------------------------
+define('APP_NAME', 'IPAM');
+define('APP_URL', 'https://ipam.example.com');
+define('APP_DEBUG', true);
+define('BASE_PATH', realpath(__DIR__ . '/..'));
+define('UPLOAD_DIR', BASE_PATH . '/uploads/');
+define('RESET_URL', 'https://reset.example.com');
+define('COOKIE_SALT', 'change_me');
+define('LOCKOUT_COUNT', 10);

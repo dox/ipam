@@ -1,0 +1,4 @@
+.DS_Store
+.nova/
+vendor/
+config/config.php
