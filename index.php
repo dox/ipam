@@ -17,7 +17,7 @@ if (!$user->isLoggedIn()) {
 	<div class="container">
 		<?php
 		// Determine which page to show
-		$allowed = ['404','index','subnet','ip','test'];
+		$allowed = ['404','index','subnet','ip','lookups','logs','test'];
 		
 		$page = $_GET['page'] ?? 'index';
 		

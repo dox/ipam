@@ -137,39 +137,7 @@ class Log extends Model {
 			?? $_SERVER['HTTP_X_FORWARDED_FOR'] 
 			?? 'UNKNOWN';
 	}
-	
-	public function linkify(string $text): string {
-		// Map UID types to URL patterns
-		$routes = [
-			'booking_uid' => 'index.php?page=booking&uid=%d',
-			'meal_uid'    => 'index.php?page=meal&uid=%d',
-			'member_uid'  => 'index.php?page=member&ldap=%d',
-		];
-	
-		return preg_replace_callback(
-			'/\[(\w+_uid):(\d+)\]/',
-			function ($matches) use ($routes) {
-				[$full, $type, $id] = $matches;
-	
-				// If we don’t recognise the UID type, leave it untouched
-				if (!isset($routes[$type])) {
-					return $full;
-				}
-	
-				$url = sprintf($routes[$type], $id);
-	
-				return sprintf(
-					'<a href="%s">[%s:%s]</a>',
-					htmlspecialchars($url, ENT_QUOTES, 'UTF-8'),
-					htmlspecialchars($type, ENT_QUOTES, 'UTF-8'),
-					htmlspecialchars($id, ENT_QUOTES, 'UTF-8')
-				);
-			},
-			$text
-		);
-	}
 }
-
 
 
 

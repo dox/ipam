@@ -10,12 +10,21 @@
 		
 		<div class="collapse navbar-collapse" id="navbarMain">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<!--<li>
-					<a href="index.php?page=index" class="nav-link"><i class="bi bi-share me-2"></i>Subnets</a>
+				<li class="nav-item">
+					<a href="index.php?page=index" class="nav-link<?= (($_GET['page'] ?? 'index') === 'index') ? ' active' : '' ?>">
+						<i class="bi bi-diagram-3 me-2"></i>Subnets
+					</a>
 				</li>
-				<li>
-					<a href="index.php?page=ips" class="nav-link"><i class="bi bi-hdd-network me-2"></i>IPs</a>
-				</li>-->
+				<li class="nav-item">
+					<a href="index.php?page=lookups" class="nav-link<?= (($_GET['page'] ?? '') === 'lookups') ? ' active' : '' ?>">
+						<i class="bi bi-sliders me-2"></i>Lookup Data
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="index.php?page=logs" class="nav-link<?= (($_GET['page'] ?? '') === 'logs') ? ' active' : '' ?>">
+						<i class="bi bi-journal-text me-2"></i>Logs
+					</a>
+				</li>
 			</ul>
 			
 			<div class="d-flex align-items-center gap-3">
